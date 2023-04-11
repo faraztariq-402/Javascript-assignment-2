@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+
+function search(cityArr,myCity){
+        if(cityArr.length === 0){
+            return false
+        }else if(cityArr[0] === myCity){
+            return true;
+        }else{
+         return search(cityArr.slice(1),myCity)   
+        }
+    
+    
+    }
+    let cities = ["karachi","lahore","islamabad","quetta"]
+    let userCity = prompt("Enter a city name").toLowerCase()
+    if(search(cities,userCity)){
+        document.getElementById("result").innerHTML= "True";
+    }else{
+        document.getElementById("result").innerHTML= "false";
+    }
+    
+    </script>
+</body>
+</html>

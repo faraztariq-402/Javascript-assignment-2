@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                      let person = {
+        name:"faraz",
+        age: 20,
+        teacher: "Sir Ishaq",
+        className: "JavaScript"
+    
+    }
+        function saveLocalStorage(key,object){
+
+    let stringify = JSON.stringify(object);
+    localStorage.setItem(key, stringify)
+ 
+
+        }
+
+        function getLocalStorage(getItem){
+            let parse = localStorage.getItem(getItem)
+
+            parse = JSON.parse(parse)
+
+return parse
+        }
+saveLocalStorage("person1",person)
+let myObject = getLocalStorage("person1")
+console.log(myObject)
+    </script>
+</body>
+</html>
